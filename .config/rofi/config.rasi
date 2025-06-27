@@ -1,0 +1,134 @@
+/**
+ * Dark Gray Rofi Theme for Drun Menu
+ * Customized from original by Aditya Shakya (adi1090x)
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    modi:                        "drun"; /* Тільки drun меню */
+    show-icons:                  true;
+    display-drun:                "🧑‍💻"; /* Більш описовий текст для drun */
+    drun-display-format:         "{name}"; /* Лише назва застосунку для компактності */
+}
+
+/*****----- Color Scheme -----*****/
+* {
+    /* Base colors */
+    background:                  #212121; /* Дуже темно-сірий, майже чорний */
+    background-alt:              #2c2c2c; /* Темно-сірий, трохи світліший за background */
+    foreground:                  #e6e6e6; /* Світло-сірий для тексту */
+    selected:                    #424242; /* Середньо-сірий для вибраних елементів */
+    active:                      #505050; /* Трохи світліший сірий для активних елементів */
+    urgent:                      #b06060; /* Приглушений червоний для термінових, якщо вони з'являться */
+    
+    /* Derived colors */
+    border-colour:               var(selected);
+    handle-colour:               var(selected);
+    background-colour:           var(background);
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           var(foreground);
+    active-background:           var(active);
+    active-foreground:           var(foreground);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(foreground);
+    selected-urgent-background:  var(urgent);
+    selected-urgent-foreground:  var(foreground);
+    selected-active-background:  var(active);
+    selected-active-foreground:  var(foreground);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-background: var(urgent);
+    alternate-urgent-foreground: var(foreground);
+    alternate-active-background: var(active);
+    alternate-active-foreground: var(foreground);
+}
+
+/*****----- Window Settings -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               8px;
+    border-color:                @border-colour;
+    cursor:                      "default";
+    background-color:            @background-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing:                     10px;
+    padding:                     10px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ]; /* Прибрано message та mode-switcher */
+}
+
+/*****----- Input Bar -----*****/
+inputbar {
+    spacing:                     10px;
+    padding:                     10px;
+    border:                      0px 0px 1px 0px;
+    border-color:                @border-colour;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+    children:                    [ "prompt", "entry" ];
+}
+
+/*****----- Prompt -----*****/
+prompt {
+    enabled:                     true;
+    padding:                     0px;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+/*****----- Entry -----*****/
+entry {
+    background-color:            inherit;
+    text-color:                  inherit;
+    placeholder:                 "search..."; /* Підказка для поля вводу */
+    placeholder-color:           #999999; /* Сірий колір для підказки */
+}
+
+/*****----- List View -----*****/
+listview {
+    columns:                     1; /* Одна колонка для кращого відображення назв застосунків */
+    lines:                       10; /* Більше рядків для списку застосунків */
+    spacing:                     0px;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      "default";
+    cycle:                       true; /* Дозволяє прокручувати список по колу */
+    dynamic:                     true; /* Дозволяє динамічне оновлення списку */
+}
+
+/*****----- Elements -----*****/
+element {
+    spacing:                     10px;
+    padding:                     10px;
+    border-radius:               4px;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      pointer;
+}
+
+element-icon {
+    size:                        28px;
+    vertical-align:              0.5;
+}
+
+element selected.normal {
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
+}
