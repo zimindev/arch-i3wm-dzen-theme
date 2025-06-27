@@ -1,7 +1,7 @@
 ```bash
 sudo pacman -Sy
 sudo pacman -Syu
-sudo pacman -S duf ranger mousepad pcmanfm git gnome-theme-extra libreoffice-still mupdf feh mpv krita flameshot firefox filezilla mtpaint freerdp remmina keepassxc gnome-connections
+sudo pacman -S duf ranger mousepad pcmanfm git gnome-theme-extra noto-fonts-emoji libreoffice-still mupdf feh mpv krita mtpaint inkscape flameshot firefox filezilla mtpaint freerdp remmina keepassxc gnome-connections
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
